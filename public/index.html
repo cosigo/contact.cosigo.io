@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <!-- ========================= -->
+  <!-- Shared System Styles -->
+  <!-- ========================= -->
+  <link rel="stylesheet" href="/shared/nav.css">
+  <link rel="stylesheet" href="/shared/style.css"> 
+
+  <meta charset="utf-8">
+
+  <title>Cosigo Contact — Communication & Human Interface</title>
+
+  <meta name="description" content="Cosigo contact portal. Human communication interface for inquiries, coordination, support routing, and system participation across the Cosigo ecosystem.">
+
+  <meta name="keywords" content="Cosigo contact, Cosigo communication, Cosigo support, Cosigo coordination, Cosigo participation">
+  <meta name="author" content="Cosigo Protocol">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://contact.cosigo.io/">
+
+  <!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cosigo Contact — Communication & Human Interface">
+  <meta property="og:description" content="Human communication interface for the Cosigo ecosystem.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cosigo">
+  <meta property="og:url" content="https://contact.cosigo.io/">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Cosigo Contact",
+    "description": "Human communication interface for coordination and participation in the Cosigo ecosystem.",
+    "url": "https://contact.cosigo.io/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Cosigo"
+    },
+    "inLanguage": "en"
+  }
+  </script>
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- Cosigo Universal Nav -->
+<!-- ========================= -->
+<div id="cosigo-nav"></div>
+
+<script>
+fetch('/shared/nav.html')
+  .then(res => {
+    if (!res.ok) throw new Error('Nav not found');
+    return res.text();
+  })
+  .then(html => {
+    document.getElementById('cosigo-nav').innerHTML = html;
+  })
+  .catch(err => console.error("Nav load error:", err));
+</script>
+
+<!-- ========================= -->
+<!-- Main Content -->
+<!-- ========================= -->
+<main>
+  <div class="wrap">
+
+    <!-- Metal identity bar -->
+    <div class="bar">
+      <i class="g"></i><i class="s"></i><i class="c"></i>
+    </div>
+
+    <!-- Header Card -->
+    <section class="card">
+      <h1>Cosigo — Contact</h1>
+      <p class="lead"><strong>Communication & Human Interface</strong></p>
+      <p>This namespace provides the human communication interface for the Cosigo ecosystem.</p>
+      <p>Communication is routed by function and domain — not hierarchy.</p>
+    </section>
+
+    <!-- Grid -->
+    <section class="grid">
+
+      <!-- Contact Admin -->
+      <article class="domain">
+        <div class="metal"></div>
+        <div class="inner">
+          <h3>Contact Administration</h3>
+
+          <form method="POST" action="/api/mail.php" class="contact-form">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" rows="5" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+          </form>
+
+          <p><em>Administrative tools coming soon.</em></p>
+        </div>
+      </article>
+
+      <!-- Public Identity -->
+      <article class="domain">
+        <div class="metal"></div>
+        <div class="inner">
+          <h3>Public Identity Channels</h3>
+
+          <div class="chips">
+
+            <a class="chip" href="https://github.com/cosigo" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.61-3.37-1.19-3.37-1.19-.46-1.18-1.12-1.49-1.12-1.49-.92-.64.07-.63.07-.63 1.02.07 1.56 1.06 1.56 1.06 .9 1.55 2.36 1.11 2.94.85 .09-.66 .35-1.11 .63-1.37-2.22-.26-4.56-1.11-4.56-4.94 0-1.09 .39-1.98 1.03-2.68-.1-.25-.45-1.29 .1-2.69 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02 .55 1.4 .2 2.44 .1 2.69 .64 .7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.67-4.57 4.92 .36 .31 .68 .92 .68 1.86v2.76c0 .27 .18 .58 .69 .48A10 10 0 0 0 12 2z"/>
+              </svg>
+              github
+            </a>
+
+            <a class="chip" href="https://facebook.com/profile.php?id=100008677273324" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 4.99 3.66 9.13 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.81 8.44-4.95 8.44-9.94z"/>
+              </svg>
+              facebook
+            </a>
+
+            <a class="chip" href="https://tiktok.com/@wendallwilson" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M21 8.5c-1.8 0-3.4-.6-4.7-1.6v7.6c0 3.4-2.8 6.1-6.2 6.1s-6.1-2.7-6.1-6.1 2.7-6.1 6.1-6.1c.4 0 .8 0 1.2.1v3.2c-.4-.1-.8-.2-1.2-.2-1.7 0-3 1.4-3 3s1.3 3 3 3 3.1-1.4 3.1-3V2h3.1c.3 2.2 2.1 3.9 4.3 4v2.5z"/>
+              </svg>
+              tiktok
+            </a>
+
+            <a class="chip" href="mailto:admin@cosigo.io">admin@cosigo.io</a>
+
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Domains -->
+    <section class="card contact-status">
+      <h2>Contact Domains</h2>
+      <ul>
+        <li>General inquiries</li>
+        <li>Technical coordination</li>
+        <li>Documentation access</li>
+        <li>Participation pathways</li>
+        <li>Merchant and integration contact</li>
+        <li>Support routing</li>
+      </ul>
+    </section>
+
+    <!-- Status -->
+    <section class="card">
+      <h2>Status</h2>
+      <p>This contact interface is under active development.</p>
+      <p>Routing structures and communication channels are being established.</p>
+    </section>
+
+  </div>
+</main>
+
+<!-- ========================= -->
+<!-- Footer -->
+<!-- ========================= -->
+
+<!-- ============================= -->
+<!-- FOOTER -->
+<!-- ============================= -->
+
+<footer class="site-footer">
+  <p>
+    Cosigo System — Structure over speculation · Value over price · Continuity over volatility · Architecture over hype.
+    
+    <a href="https://github.com/cosigo"
+       aria-label="Cosigo GitHub organization"
+       title="Cosigo open-source repositories"
+       class="github-link">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+        <path fill="currentColor"
+          d="M8 0C3.58 0 0 3.65 0 8.15c0 3.6 2.29 6.65 5.47 7.73.4.08.55-.18.55-.39
+          0-.19-.01-.82-.01-1.49-2.01.45-2.53-.5-2.69-.96-.09-.23-.48-.96-.82-1.15
+          -.28-.15-.68-.52-.01-.53.63-.01 1.08.6 1.23.85.72 1.23 1.87.88
+          2.33.67.07-.53.28-.88.51-1.08-1.78-.2-3.64-.91-3.64-4.05
+          0-.89.31-1.62.82-2.19-.08-.2-.36-1.02.08-2.12 0 0 .67-.22
+          2.2.84.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27
+          1.53-1.06 2.2-.84 2.2-.84.44 1.1.16 1.92.08 2.12.51.57
+          .82 1.3.82 2.19 0 3.15-1.87 3.85-3.65 4.05.29.26.54.77
+          .54 1.56 0 1.13-.01 2.04-.01 2.32 0 .21.15.47.55.39
+          C13.71 14.8 16 11.75 16 8.15 16 3.65 12.42 0 8 0z"/>
+      </svg>
+      <span class="visually-hidden">GitHub</span>
+    </a>
+  </p>
+</footer>
+
+</body>
+</html>

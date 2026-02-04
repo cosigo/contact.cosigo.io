@@ -1,0 +1,4 @@
+app/_config/smtp.php
+lib/PHPMailer/
+public/lib/PHPMailer-master/
+.env*
