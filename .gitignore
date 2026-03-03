@@ -6,3 +6,4 @@ _config/mail.php
 
 # secrets
 /_config/mail.php
+/public/api/*.bak.*
