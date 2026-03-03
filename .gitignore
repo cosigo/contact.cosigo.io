@@ -1,7 +1,6 @@
 app/_config/smtp.php
 lib/PHPMailer/
 public/lib/PHPMailer-master/
-_config/mail.php
 .env*
 
 # secrets
