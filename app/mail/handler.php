@@ -53,7 +53,7 @@ function cosigo_rate_limit(string $ip, int $maxPerHour = 20): ?string {
 function cosigo_handle_contact_post(array $post): array {
   // honeypot
   $gotcha = trim((string)($post['_gotcha'] ?? ''));
-  if ($gotcha !== '') return ['ok' => true];
+  if ( !== "") return ['ok' => true];
 
   $ip = (string)($_SERVER['REMOTE_ADDR'] ?? '');
 
