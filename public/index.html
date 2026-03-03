@@ -62,16 +62,21 @@
 <div id="cosigo-nav"></div>
 
 <script>
-fetch('/shared/nav.html')
-  .then(res => {
-    if (!res.ok) throw new Error('Nav not found');
-    return res.text();
-  })
-  .then(html => {
-    document.getElementById('cosigo-nav').innerHTML = html;
-  })
-  .catch(err => console.error("Nav load error:", err));
-</script>
+    fetch('/shared/nav.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('cosigo-nav').innerHTML = html;
+      })
+      .catch(err => console.error("Nav load error:", err));
+  </script>
+
+  <script>
+    fetch('https://cosigo.io/shared/nav.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('cosigo-nav').innerHTML = html;
+      });
+  </script>
 
 <!-- ========================= -->
 <!-- Main Content -->
@@ -83,6 +88,8 @@ fetch('/shared/nav.html')
     <div class="bar">
       <i class="g"></i><i class="s"></i><i class="c"></i>
     </div>
+
+    <div id="formMsg" role="status" aria-live="polite" style="margin-top:12px"></div>
 
     <!-- Header Card -->
     <section class="card">
@@ -172,10 +179,6 @@ fetch('/shared/nav.html')
 
   </div>
 </main>
-
-<!-- ========================= -->
-<!-- Footer -->
-<!-- ========================= -->
 
 <!-- ============================= -->
 <!-- FOOTER -->

@@ -146,7 +146,7 @@ h1 {
 }
 
 .domain h3 {
-  color: #555
+  color: #cbd5e1
 }
 
 .domain p {
@@ -254,6 +254,10 @@ a:active {
   cursor: pointer;
   color: #303030;
 }
+
+.form-msg { margin-top: 12px; font-size: 14px; color: var(--muted); }
+.form-msg.ok { color: #7CFF6B; }
+.form-msg.err { color: #ff4d4d; }
 
 /* ========================= */
 /* Mobile Responsive Layout */

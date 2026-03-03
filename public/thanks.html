@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cosigo — Message Received</title>
+<meta name="robots" content="noindex,follow" />
+
+<style>
+:root{
+  --copper:#b87333;
+  --silver:#d7dde8;
+  --gold:#d4af37;
+
+  --bg:#07070a;
+  --ink:#eef2ff;
+  --muted:#aab3cf;
+
+  --line:rgba(215,221,232,.16);
+  --line2:rgba(215,221,232,.10);
+  --panel:rgba(255,255,255,.03);
+
+  --deco:"Cinzel","Trajan Pro","Palatino Linotype","Garamond",serif;
+  --body:"Cormorant Garamond","Georgia","Times New Roman",serif;
+
+  --radius:22px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(900px 600px at 18% 8%, rgba(184,115,51,.12), transparent 62%),
+    radial-gradient(900px 600px at 82% 12%, rgba(212,175,55,.10), transparent 62%),
+    radial-gradient(1000px 700px at 55% 90%, rgba(215,221,232,.08), transparent 62%),
+    var(--bg);
+  font:18px/1.55 var(--body);
+  letter-spacing:.1px;
+}
+
+.wrap{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 18px 80px;
+  text-align:center;
+}
+
+.brand{
+  font:700 18px/1 var(--deco);
+  letter-spacing:2.6px;
+  text-transform:uppercase;
+  margin-bottom:30px;
+  opacity:.9;
+}
+
+.frame{
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  padding:40px 30px;
+  position:relative;
+  overflow:hidden;
+}
+
+.frame:before,
+.frame:after{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  border:1px solid var(--line2);
+  transform:rotate(45deg);
+  opacity:.7;
+}
+
+.frame:before{top:-70px;left:-70px}
+.frame:after{bottom:-70px;right:-70px}
+
+h1{
+  margin:0 0 10px;
+  font:700 40px/1.1 var(--deco);
+  letter-spacing:1px;
+}
+
+.lead{
+  margin:0 0 18px;
+  color:var(--gold);
+  font-size:18px;
+}
+
+.rule{
+  margin:22px auto;
+  height:1px;
+  width:60%;
+  background:
+    linear-gradient(90deg,
+      transparent,
+      rgba(184,115,51,.6),
+      rgba(215,221,232,.65),
+      rgba(212,175,55,.6),
+      transparent);
+  opacity:.85;
+}
+
+#msg{
+  margin-top: 14px;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+#msg.ok{
+  color: var(--gold);
+}
+#msg.fail{
+  color: #ff4d4d;
+}
+
+.message{
+  font-size:17px;
+  max-width:60ch;
+  margin:0 auto;
+  color:rgba(238,242,255,.9);
+}
+
+.btnRow{
+  margin-top:28px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  padding:10px 16px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  font:700 13px/1 var(--deco);
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    background .25s ease,
+    border-color .25s ease;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  border-color:rgba(215,221,232,.35);
+  box-shadow:0 6px 18px rgba(0,0,0,.45);
+}
+
+.btn.primary{
+  background:linear-gradient(90deg, rgba(184,115,51,.22), rgba(215,221,232,.16), rgba(212,175,55,.18));
+  border-color:rgba(215,221,232,.22);
+}
+
+.footer{
+  margin-top:40px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+@media(max-width:700px){
+  h1{font-size:32px}
+}
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="brand">Cosigo</div>
+
+    <div class="frame">
+      <h1>Message Received</h1>
+      <p class="lead">Thank you for reaching out.</p>
+
+      <div class="rule"></div>
+
+      <p id="msg" class="lead" role="status" aria-live="polite"></p>
+
+      <p class="message">
+        Your inquiry has been recorded and routed for review.
+        We respond manually and deliberately — please allow reasonable time.
+      </p>
+
+      <div class="btnRow">
+        <a class="btn primary" href="https://contact.cosigo.io">Return to Contact</a>
+        <a class="btn" href="https://cosigo.io">Main Site</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      Structure over speculation · value over price · continuity over volatility
+      <br/>
+      © 2026 Cosigo
+    </div>
+
+  <script>
+  const p = new URLSearchParams(location.search);
+  const status = p.get("status");
+  const el = document.getElementById("msg");
+
+  if (!status || status === "ok") {
+    el.textContent = "✅ Message sent. Thank you.";
+    el.className = "ok";
+  } else {
+    el.textContent = "❌ Message failed to send. Please try again.";
+    el.className = "fail";
+  }
+</script>
+
+  </div>
+</body>
+</html>

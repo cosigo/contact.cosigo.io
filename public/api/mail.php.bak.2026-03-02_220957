@@ -1,13 +1,12 @@
 <?php
 // public/api/mail.php
-declare(strict_types=1);
 
-ini_set('display_errors', '0');
+ini_set('display_errors', 0);
 error_reporting(E_ALL);
 
 require_once __DIR__ . '/../../app/mail/send.php';
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   http_response_code(405);
   header('Location: /thanks.html?status=fail');
   exit;
@@ -15,13 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $result = cosigo_handle_contact_post($_POST);
 
-if (!empty($result['ok'])) {
+if (!empty($result["ok"])) {
   header('Location: /thanks.html?status=ok');
   exit;
 }
 
-if (!empty($result['error'])) {
-  error_log('Contact form mail failed: ' . $result['error']);
+if (!empty($result["error"])) {
+  error_log("Contact form mail failed: " . $result["error"]);
 }
 
 header('Location: /thanks.html?status=fail');

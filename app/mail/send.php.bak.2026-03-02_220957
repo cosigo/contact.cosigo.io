@@ -24,7 +24,7 @@ function cosigo_handle_contact_post(array $post): array
         'sales@cosigo.io',
         '[Cosigo Contact] ' . $subject,
         $body,
-        'sales@cosigo.io'
+        $email
     );
 
     if ($success) {
