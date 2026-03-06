@@ -6,3 +6,4 @@ public/lib/PHPMailer-master/
 # secrets
 /_config/mail.php
 /public/api/*.bak.*
+.vscode/
