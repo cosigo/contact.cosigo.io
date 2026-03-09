@@ -109,6 +109,7 @@
           <h3>Contact Administration</h3>
 
           <form method="POST" action="/api/mail.php" class="contact-form">
+            <input type="hidden" name="_ts" value="<?= time() ?>">
             <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="text" name="subject" placeholder="Subject" required>
